@@ -1,0 +1,14 @@
+# Python (Backend)
+__pycache__/
+*.pyc
+venv/
+.env
+
+# React Native (Frontend)
+node_modules/
+.expo/
+dist/
+web-build/
+
+# System
+.DS_Store
