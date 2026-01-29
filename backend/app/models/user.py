@@ -22,7 +22,7 @@ class User:
 
     @staticmethod
     def get_by_id(user_id):
-        # Required for the /auth/me endpoint to fetch profile by JWT ID [cite: 53]
+        # Required for the /auth/me endpoint to fetch profile by JWT ID
         try:
             user_data = db.users.find_one({"_id": ObjectId(user_id)})
             return User(user_data) if user_data else None
@@ -31,7 +31,7 @@ class User:
 
     @staticmethod
     def create_user(name, email, hashed_password):
-        # Includes name and created_at per requirements [cite: 86, 89]
+        # Includes name and created_at per requirements
         db.users.insert_one({
             "name": name,
             "email": email,

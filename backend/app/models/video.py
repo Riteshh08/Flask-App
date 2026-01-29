@@ -12,7 +12,7 @@ class Video:
 
     @staticmethod
     def get_dashboard_videos():
-        # Requirement: Returns 2 videos only [cite: 65]
+        # Requirement: Returns 2 videos only
         videos_cursor = db.videos.find({"is_active": True}).limit(2)
         return [Video(v) for v in videos_cursor]
 

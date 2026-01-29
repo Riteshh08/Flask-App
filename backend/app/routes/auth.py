@@ -42,7 +42,7 @@ def signup():
     if User.get_by_email(data['email']):
         return jsonify({'message': 'User already exists'}), 400
         
-    # 3. Create User with Name [cite: 22, 86]
+    # 3. Create User with Name
     hashed = hash_password(data['password'])
     User.create_user(data['name'], data['email'], hashed)
     
@@ -73,7 +73,7 @@ def get_profile(user_id):
     if not user:
         return jsonify({'message': 'User not found'}), 404
         
-    # Returns Name and Email per JD [cite: 47]
+    # Returns Name and Email per JD
     return jsonify({
         'name': user.name,
         'email': user.email
@@ -81,5 +81,5 @@ def get_profile(user_id):
 
 @auth_bp.route('/logout', methods=['POST']) # Required per JD 
 def logout():
-    # Since we use JWT, we mostly handle logout on the frontend by clearing the token [cite: 47]
+    # Since we use JWT, we mostly handle logout on the frontend by clearing the token
     return jsonify({'message': 'Logged out successfully'}), 200
