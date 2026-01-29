@@ -42,5 +42,11 @@ python run.py
 ### 2. Frontend Setup
 
 cd frontend
+
+# Install React Native
+
 npm install
+
+# Start React Native App
+
 npx expo start
